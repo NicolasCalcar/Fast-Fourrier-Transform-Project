@@ -1,0 +1,69 @@
+#+title: Projet implémentation de la multiplication de polynôme
+#+subtitle: Multiplication de polynôme
+
+
+#+OPTIONS: toc:nil lang:fr
+
+
+* Introduction
+
+Le but de ce projet vise à développer la multiplication de polynôme en utilisant la méthode naive et la FFT
+
+* Compilation
+
+Pour compiler le programme C, il est nécessaire d'utiliser le makefile en utilisant la commande suivante :
+
+#+begin_src bash
+make
+#+end_src
+
+Pour enlever le fichier exécutable, exécuter la commande suivante :
+
+#+begin_src bash
+make clean
+#+end_src
+
+* Lancer le programme
+Pour lancer le programme, utiliser la commande :
+
+#+begin_src bash
+./main size
+#+end_src
+
+Avec size un entier supérieur à 0.
+
+size correspond à la taille des deux polynômes à multiplier.
+
+Lors du lancement du programme, sur le terminal le programme vas indiquer les différentes étapes. Pour la commande suivante:
+
+#+begin_src bash
+./main 3
+#+end_src
+
+on aura comme résultat sur le terminal
+
+#+begin_src bash
+Generation des polynomes
+
+Execution de la méthode naive
+Multiplication naive en 0.000001s
+
+[4730, 5253, 8066, 6152, 1584]
+
+Execution de la méthode via la FFT
+
+[4730, 5253, 8066, 6152, 1584]
+
+Multiplication FFT en 0.000072s
+#+end_src
+
+le premier tableau représente le résultat de la multiplication naive entre deux polynômes de taille size généré aléatoirement
+
+Le second tableau représente le résultat de la multiplication via la méthode FFT des deux mêmes polynômes
+
+les entiers stockés dans le tableau sont mis de manière décroissante en fonction du degré du coefficient.
+
+Par exemple pour le résultat ci-dessus, le tableau représente:
+
+4730X⁴ + 5253X³ + 8066X² + 6152X + 1584
+
