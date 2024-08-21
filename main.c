@@ -334,7 +334,6 @@ void multiplication(int* firstPolynome, int firstDegre, int* secondPolynome, int
     }
  
     // FFT
-    // O(n*log(n))
     polynomeComplex* resultFirstPoly = malloc(sizeof(polynomeComplex));
     resultFirstPoly->degree = firstDegre;
     resultFirstPoly->tab = calloc(firstDegre+1,sizeof(complex));
@@ -346,13 +345,11 @@ void multiplication(int* firstPolynome, int firstDegre, int* secondPolynome, int
     FFTOpti(secondDegre+1, secondPolynome, resultSecondPoly->tab, 1, w);
     
     // MULTIPLICATION COEFF PAR COEFF
-    // O(n)
     for(int i = 0; i< n;i++){
         resultFirstPoly->tab[i] = c_mult(&resultFirstPoly->tab[i],&resultSecondPoly->tab[i]);
     }
 
     // IFFT R
-    // O(n*log(n))
     polynomeComplex* resultR;
     resultR = IFFTApplicationOpti(resultFirstPoly->tab,resultFirstPoly->degree, w);
 
@@ -362,7 +359,7 @@ void multiplication(int* firstPolynome, int firstDegre, int* secondPolynome, int
     printf("\nMultiplication FFT en %fs\n", endTime - temps);
 }
 
-// Multiplication naive sur des polynomes a coefficents entiers en O(n^2)
+// Multiplication naive sur des polynomes a coefficents entiers
 int* naiveMultiplication(int* firstVector, int firstDegre, int* secondVector, int secondDegre){
     double temps = wtime();
     int degree = firstDegre + secondDegre;
