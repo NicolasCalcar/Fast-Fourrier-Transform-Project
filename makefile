@@ -6,4 +6,4 @@ main: $(OBJ)
 	$(CC) $(OBJ) -o main $(CFLAGS)
 
 clean:
-	rm main
+	rm -f main
