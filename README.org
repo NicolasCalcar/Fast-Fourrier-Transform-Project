@@ -67,3 +67,17 @@ Par exemple pour le résultat ci-dessus, le tableau représente:
 
 4730X⁴ + 5253X³ + 8066X² + 6152X + 1584
 
+* Résultats
+
+Voici un graphique représentant les résultats des deux méthodes de multiplication de polynômes :
+
+#+CAPTION: Résultats de la multiplication de polynômes
+#+NAME: fig:result
+#+ATTR_LATEX: :width 0.8\textwidth
+[[file:result.png]]
+
+Le graphique ci-dessus montre une comparaison des temps d'exécution des deux méthodes (naïve et FFT) en fonction de la taille des polynômes. 
+
+Il est évident que la méthode FFT surpasse la méthode naïve pour les grandes tailles de polynômes, avec un temps d'exécution qui augmente beaucoup plus lentement par rapport à la méthode naïve. 
+
+Cette différence devient plus prononcée à mesure que la taille des polynômes augmente, mettant en évidence l'efficacité de la méthode FFT pour les calculs impliquant de grands polynômes.
